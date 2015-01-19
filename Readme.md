@@ -53,10 +53,12 @@ Cumulative used a simple register model to accomplish tasks such as addition,
 subtraction, and comparison. This allowed the virtual machine to operate using
 a single operation:
 
+```
   add *src, increment, destination
 
   Read from memory location src, add integer "increment" to it, and store in
   memory location "destination"
+```
 
 Through judicious use of various registers, you can implement a Turing-complete
 language through this 1 instruction.
@@ -84,6 +86,7 @@ the registers of interest were loaded with (or cleared of) the data needed to
 perform computations.
 As an example, this is how 2 integers were read and added:
 
+```
   add 0, 0, $ac         ; Clear accumulator
   add $val1, 0, $val1   ; "Observe" value 1 to add it to the accumulator.
                         ; The value is read from, has nothing added to it,
@@ -91,6 +94,7 @@ As an example, this is how 2 integers were read and added:
                         ; This effectively just reads the value.
   add $val2, 0, $val2   ; Same as above
   add $ac, 0, $dest     ; Read from accumulator, store to destination.
+```
 
 Other registers allow for jumping (code pointer register), comparison checks
 (> 0 register, == 0 register, < 0 register) which can be added to the code
