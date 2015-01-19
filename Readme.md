@@ -52,6 +52,7 @@ later that I was able to turn that concept into reality.
 Cumulative used a simple register model to accomplish tasks such as addition,
 subtraction, and comparison. This allowed the virtual machine to operate using
 a single operation:
+
   add *src, increment, destination
 
   Read from memory location src, add integer "increment" to it, and store in
@@ -61,7 +62,7 @@ Through judicious use of various registers, you can implement a Turing-complete
 language through this 1 instruction.
 
 After the Cumulative project, I worked on a single character virtual machine called
-Club (unreleased) which was designed with (Code Golf)[http://codegolf.stackexchange.com/] in mind.
+Club (unreleased) which was designed with [Code Golf](http://codegolf.stackexchange.com/) in mind.
 The aim was the simplest virtual machine that could tackle the challenges posted
 on Code Golf.
 
@@ -73,7 +74,7 @@ for the next instruction.
 More Cumulative background
 --------------------------
 
-The (sample page)[http://htmlpreview.github.io/?https://github.com/andrakis/gleam/blob/master/cumulative/cumulative.html] has the full Cumulative interpreter
+The [sample page](http://htmlpreview.github.io/?https://github.com/andrakis/gleam/blob/master/cumulative/cumulative.html) has the full Cumulative interpreter
 in Javascript. It is preloaded with a simple program to call a function, get a
 return value, and then jump to an endless loop.
 
@@ -82,6 +83,7 @@ design for Cumulative. They operate around the idea of observing data so that
 the registers of interest were loaded with (or cleared of) the data needed to
 perform computations.
 As an example, this is how 2 integers were read and added:
+
   add 0, 0, $ac         ; Clear accumulator
   add $val1, 0, $val1   ; "Observe" value 1 to add it to the accumulator.
                         ; The value is read from, has nothing added to it,
